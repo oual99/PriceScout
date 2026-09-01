@@ -11,7 +11,17 @@ Four agents run in sequence:
 3. **Trust Scorer** — searches for reviews/complaints about each seller and assigns a trust score.
 4. **Ranker & Formatter** — ranks listings by price + trust score and formats the final result table.
 
-See [demo.excalidraw](demo.excalidraw) for the architecture diagram.
+```mermaid
+flowchart LR
+    P[Product] --> R[Researcher\nsearch tool]
+    R --> E[Extracter\nscraping tool]
+    E --> T[Trust Scorer\nsearch tool]
+    E --> RF[Ranker & Formatter]
+    T --> RF
+    RF --> Res[Result Table]
+```
+
+*(editable source: [demo.excalidraw](demo.excalidraw) — open it with the [Excalidraw](https://excalidraw.com) editor or a compatible VS Code extension; GitHub can't render `.excalidraw` files inline)*
 
 ## Setup
 
